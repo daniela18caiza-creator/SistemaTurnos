@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Turnos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Sistema de Gestión de Turnos</h1>
+
+        <p>Bienvenido. Solicite su turno para ser atendido.</p>
+
+        <button onclick="solicitarTurno()">
+            Solicitar turno
+        </button>
+
+        <h2 id="numeroTurno">
+            Su turno aparecerá aquí
+        </h2>
+
+        <div class="panel">
+
+            <h3>Turno actual</h3>
+
+            <p id="turnoActual">Ninguno</p>
+
+            <h3>Turnos pendientes</h3>
+
+            <p id="pendientes">0</p>
+
+            <button onclick="llamarSiguiente()">
+                Llamar siguiente
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

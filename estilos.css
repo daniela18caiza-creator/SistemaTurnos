@@ -1,0 +1,54 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eaf2f8;
+    text-align: center;
+    margin: 0;
+    padding: 30px;
+}
+
+.contenedor {
+    background-color: white;
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #1a5276;
+}
+
+button {
+    background-color: #2874a6;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #154360;
+}
+
+.panel {
+    background-color: #f4f6f7;
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+
+#numeroTurno {
+    color: #117864;
+    font-size: 28px;
+}
+
+#turnoActual {
+    font-size: 30px;
+    font-weight: bold;
+    color: #c0392b;
+}
