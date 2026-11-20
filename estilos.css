@@ -1,54 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #eaf2f8;
-    text-align: center;
-    margin: 0;
-    padding: 30px;
+    background: #f1f6fa;
+    color: #243746;
+    min-height: 100vh;
 }
 
-.contenedor {
-    background-color: white;
-    max-width: 600px;
-    margin: auto;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* ENCABEZADO */
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 25px 8%;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
-h1 {
-    color: #1a5276;
-}
-
-button {
-    background-color: #2874a6;
+.logo {
+    background: #087f8c;
     color: white;
-    border: none;
-    padding: 14px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 10px;
-}
-
-button:hover {
-    background-color: #154360;
-}
-
-.panel {
-    background-color: #f4f6f7;
-    padding: 20px;
-    margin-top: 25px;
-    border-radius: 10px;
-}
-
-#numeroTurno {
-    color: #117864;
-    font-size: 28px;
-}
-
-#turnoActual {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
     font-size: 30px;
     font-weight: bold;
-    color: #c0392b;
+}
+
+.encabezado h1 {
+    color: #075b67;
+    font-size: 22px;
+}
+
+.encabezado p {
+    color: #71818c;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* CONTENEDOR */
+
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 45px auto;
+}
+
+/* TARJETA PRINCIPAL */
+
+.tarjeta-principal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(25, 70, 90, 0.10);
+}
+
+/* PANEL VISUAL DEL DISPENSARIO */
+
+.panel-imagen {
+    background:
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.35), transparent 28%),
+        linear-gradient(145deg, #087f8c, #07536e);
+    min-height: 410px;
+    display: flex;
+    align-items: center;
+    padding: 45px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.panel-imagen::before,
+.panel-imagen::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 50%;
+}
+
+.panel-imagen::before {
+    width: 280px;
+    height: 280px;
+    right: -90px;
+    top: -90px;
+}
+
+.panel-imagen::after {
+    width: 220px;
+    height: 220px;
+    left: -100px;
+    bottom: -100px;
+}
+
+.texto-imagen {
+    position: relative;
+    z-index: 1;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    padding: 8px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+}
+
+.texto-imagen h2 {
+    font-size: 34px;
+    line-height: 1.2;
+    margin: 22px 0 12px;
+    max-width: 350px;
+}
+
+.texto-imagen p {
+    color: #e0f4f5;
+    line-height: 1.6;
+    max-width: 330px;
+}
+
+.ilustracion {
+    font-size: 110px;
+    text-align: center;
+    margin-top: 20px;
+    filter: drop-shadow(0 8px 8px rgba(0,0,0,0.15));
+}
+
+.iconos-medicos {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+/* FORMULARIO */
+
+.panel-formulario {
+    padding: 55px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subtitulo {
+    color: #0795a0;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.panel-formulario h2,
+.tarjeta-actual h2,
+.tarjeta-lista h2 {
+    font-size: 25px;
+    margin-top: 10px;
+    color: #203b4b;
+}
+
+.descripcion {
+    color: #82919b;
+    line-height: 1.5;
+    margin: 12px 0 28px;
+}
+
+.panel-formulario label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 9px;
+}
+
+.panel-formulario input {
+    padding: 15px;
+    border: 1px solid #dce5e9;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    width: 100%;
+}
+
+.panel-formulario input:focus {
+    border-color: #0795a0;
+    box-shadow: 0 0 0 3px rgba(7,149,160,0.10);
+}
+
+.boton-principal,
+.boton-siguiente {
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.boton-principal {
+    background: #087f8c;
+    margin-top: 18px;
+}
+
+.boton-principal:hover,
+.boton-siguiente:hover {
+    background: #075b67;
+    transform: translateY(-2px);
+}
+
+.mensaje-turno {
+    background: #eaf8f7;
+    color: #087f8c;
+    padding: 17px;
+    border-radius: 10px;
+    margin-top: 22px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+/* PANELES INFERIORES */
+
+.panel-turnos {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.tarjeta-actual,
+.tarjeta-lista {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 8px 25px rgba(25,70,90,0.06);
+}
+
+.tarjeta-actual {
+    text-align: center;
+}
+
+.numero-actual {
+    color: #087f8c;
+    font-size: 65px;
+    font-weight: bold;
+    margin: 18px 0 5px;
+}
+
+#pacienteActual {
+    color: #667985;
+    margin-bottom: 22px;
+}
+
+.boton-siguiente {
+    background: #087f8c;
+    width: 100%;
+}
+
+.titulo-lista {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.contador {
+    background: #e5f5f5;
+    color: #087f8c;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.lista-pacientes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.paciente {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #f5f9fa;
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.datos-paciente {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #d9f0ef;
+    color: #087f8c;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+}
+
+.nombre {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.estado {
+    font-size: 12px;
+    color: #82919b;
+    margin-top: 4px;
+}
+
+.numero-lista {
+    color: #087f8c;
+    font-weight: bold;
+}
+
+.vacio {
+    text-align: center;
+    color: #82919b;
+    padding: 25px 5px;
+}
+
+footer {
+    text-align: center;
+    color: #87959d;
+    font-size: 13px;
+    padding: 20px;
+}
+
+/* DISEÑO PARA CELULARES */
+
+@media (max-width: 750px) {
+    .contenedor {
+        margin: 25px auto;
+    }
+
+    .tarjeta-principal,
+    .panel-turnos {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-imagen {
+        min-height: 300px;
+        padding: 30px;
+    }
+
+    .texto-imagen h2 {
+        font-size: 27px;
+    }
+
+    .ilustracion {
+        font-size: 75px;
+    }
+
+    .panel-formulario {
+        padding: 35px 25px;
+    }
+
+    .tarjeta-actual,
+    .tarjeta-lista {
+        padding: 22px;
+    }
+
+    .encabezado {
+        padding: 20px 5%;
+    }
 }
