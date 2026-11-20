@@ -1,0 +1,407 @@
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #F2F4F7;
+    color: #333333;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    background: #FFFFFF;
+    padding: 15px 8%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 3px solid #FFCB04;
+}
+
+.contenedor-logo {
+    width: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-logo img {
+    width: 100%;
+    max-height: 65px;
+    object-fit: contain;
+}
+
+.informacion-encabezado {
+    border-left: 1px solid #DCE1E6;
+    padding-left: 20px;
+}
+
+.informacion-encabezado h1 {
+    font-size: 20px;
+    color: #0055A4;
+}
+
+.informacion-encabezado p {
+    color: #777777;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.contenedor {
+    width: 90%;
+    max-width: 1150px;
+    margin: 35px auto;
+}
+
+/* TARJETA PRINCIPAL */
+
+.tarjeta-principal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* PANEL DE IMAGEN */
+
+.panel-imagen {
+    min-height: 380px;
+    background:
+        linear-gradient(
+            rgba(0, 65, 130, 0.65),
+            rgba(0, 65, 130, 0.65)
+        ),
+        url("dispensario.jpg") center / cover no-repeat;
+
+    display: flex;
+    align-items: flex-end;
+    padding: 35px;
+}
+
+.texto-imagen {
+    color: #FFFFFF;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: #FFCB04;
+    color: #0055A4;
+    padding: 7px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.texto-imagen h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.texto-imagen p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* PANEL DEL FORMULARIO */
+
+.panel-formulario {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subtitulo {
+    color: #0055A4;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.panel-formulario h2 {
+    font-size: 26px;
+    color: #0055A4;
+    margin-bottom: 10px;
+}
+
+.descripcion {
+    color: #777777;
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #D5DCE3;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 5px;
+}
+
+input:focus {
+    border-color: #0055A4;
+    box-shadow: 0 0 0 2px rgba(0, 85, 164, 0.10);
+}
+
+/* MENSAJE DE ERROR */
+
+.error-nombre {
+    display: block;
+    color: #DD2927;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    min-height: 15px;
+}
+
+/* BOTÓN PRINCIPAL */
+
+.boton-principal {
+    background: #0055A4;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.boton-principal:hover {
+    background: #003F7D;
+}
+
+/* MENSAJE DE TURNO */
+
+.mensaje-turno {
+    background: #FFF8D9;
+    border-left: 4px solid #FFCB04;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.5;
+}
+
+/* PANEL DE TURNOS */
+
+.panel-turnos {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+/* TARJETA DEL TURNO ACTUAL */
+
+.tarjeta-actual {
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.tarjeta-actual h2 {
+    color: #0055A4;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.numero-actual {
+    font-size: 45px;
+    font-weight: bold;
+    color: #0055A4;
+    margin: 20px 0;
+}
+
+#pacienteActual {
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+/* BOTÓN SIGUIENTE */
+
+.boton-siguiente {
+    background: #DD2927;
+    color: #FFFFFF;
+    border: none;
+    padding: 13px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.boton-siguiente:hover {
+    background: #B51F1D;
+}
+
+/* LISTA DE PACIENTES */
+
+.tarjeta-lista {
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.titulo-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.titulo-lista h2 {
+    color: #0055A4;
+    font-size: 20px;
+    margin-top: 8px;
+}
+
+.contador {
+    background: #FFCB04;
+    color: #0055A4;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+/* ELEMENTOS DE LA LISTA */
+
+.paciente {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 0;
+    border-bottom: 1px solid #EEEEEE;
+    gap: 10px;
+}
+
+.datos-paciente {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    background: #E4EFF9;
+    color: #0055A4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.nombre {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.estado {
+    color: #888888;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.numero-lista {
+    color: #0055A4;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.vacio {
+    color: #999999;
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 14px;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #777777;
+    font-size: 13px;
+}
+
+/* DISEÑO RESPONSIVO */
+
+@media (max-width: 750px) {
+
+    .encabezado {
+        padding: 15px 5%;
+        gap: 12px;
+    }
+
+    .contenedor-logo {
+        width: 125px;
+    }
+
+    .informacion-encabezado {
+        padding-left: 12px;
+    }
+
+    .informacion-encabezado h1 {
+        font-size: 16px;
+    }
+
+    .informacion-encabezado p {
+        font-size: 11px;
+    }
+
+    .contenedor {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .tarjeta-principal {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-imagen {
+        min-height: 250px;
+    }
+
+    .texto-imagen h2 {
+        font-size: 23px;
+    }
+
+    .panel-formulario {
+        padding: 25px;
+    }
+
+    .panel-turnos {
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema de Gestión de Turnos | Dispensario Médico</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+
+        <div class="contenedor-logo">
+            <img
+                src="logo.jpg"
+                alt="Logotipo del Ministerio de Salud Pública"
+            >
+        </div>
+
+        <div class="informacion-encabezado">
+            <h1>Dispensario Médico</h1>
+            <p>Sistema de Gestión de Turnos</p>
+        </div>
+
+    </header>
+
+    <main class="contenedor">
+
+        <!-- REGISTRO DE PACIENTES -->
+        <section class="tarjeta-principal">
+
+            <div class="panel-imagen">
+
+                <div class="texto-imagen">
+
+                    <span class="etiqueta">CENTRO DE SALUD</span>
+
+                    <h2>Atención y cuidado para todos</h2>
+
+                    <p>
+                        Organizamos la atención de nuestros pacientes
+                        para brindar un servicio eficiente y ordenado.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="panel-formulario">
+
+                <span class="subtitulo">BIENVENIDO</span>
+
+                <h2>Solicitar un turno</h2>
+
+                <p class="descripcion">
+                    Ingrese sus datos para obtener un número de atención.
+                </p>
+
+                <label for="nombrePaciente">
+                    Nombre completo del paciente
+                </label>
+
+                <input
+                    type="text"
+                    id="nombrePaciente"
+                    placeholder="Ej. María Fernanda López"
+                    maxlength="80"
+                    autocomplete="name"
+                    oninput="validarNombre(this)"
+                >
+
+                <small id="errorNombre" class="error-nombre"></small>
+
+                <button
+                    class="boton-principal"
+                    onclick="solicitarTurno()"
+                >
+                    Solicitar turno
+                </button>
+
+                <div id="mensajeTurno" class="mensaje-turno">
+                    Su número de turno aparecerá aquí.
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- INFORMACIÓN DE TURNOS -->
+        <section class="panel-turnos">
+
+            <!-- TURNO ACTUAL -->
+            <div class="tarjeta-actual">
+
+                <span class="subtitulo">ATENCIÓN ACTUAL</span>
+
+                <h2>Turno en atención</h2>
+
+                <div id="turnoActual" class="numero-actual">
+                    --
+                </div>
+
+                <p id="pacienteActual">
+                    No hay pacientes en atención.
+                </p>
+
+                <button
+                    class="boton-siguiente"
+                    onclick="llamarSiguiente()"
+                >
+                    Llamar siguiente paciente
+                </button>
+
+            </div>
+
+            <!-- LISTA DE ESPERA -->
+            <div class="tarjeta-lista">
+
+                <div class="titulo-lista">
+
+                    <div>
+                        <span class="subtitulo">LISTA DE ESPERA</span>
+                        <h2>Pacientes pendientes</h2>
+                    </div>
+
+                    <span id="cantidadPendientes" class="contador">
+                        0
+                    </span>
+
+                </div>
+
+                <div id="listaPacientes" class="lista-pacientes">
+
+                    <p class="vacio">
+                        No hay pacientes pendientes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        Sistema de Gestión de Turnos - Realizado por: Dominguez Daniela, Dulce Bryan, Guambuguete Omar
+
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
